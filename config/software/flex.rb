@@ -3,7 +3,7 @@ default_version "2.6.0"
 
 relative_path "flex-2.6.0"
 
-source :url => "http://downloads.sourceforge.net/project/flex/flex-2.6.0.tar.gz?r=http%3A%2F%2Fsourceforge.net%2Fsettings%2Fmirror_choices%3Fprojectname%3Dflex%26filename%3Dflex-2.6.0.tar.gz&ts=1451387046&use_mirror=iweb",
+source :url => "https://fossies.org/linux/misc/flex-2.6.0.tar.gz",
        :md5 => "5724bcffed4ebe39e9b55a9be80859ec"
 
 # env = {
