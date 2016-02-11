@@ -6,7 +6,7 @@ dependency "pip"
 dependency "dill"
 
 source :url => "http://danse.cacr.caltech.edu/packages/dev_danse_us/multiprocess-0.70.4.tgz",
-       :md5 => "587596FFF965E66A4F474A283A72F180"
+       :md5 => "587596fff965e66a4f474a283a72f180"
 
 build do
   # license "http://trac.mystic.cacr.caltech.edu/project/pathos/wiki/License"
