@@ -1,5 +1,5 @@
 #
-# Copyright:: Copyright (c) 2012-2014 Chef Software, Inc.
+# Copyright:: Copyright (c) 2013-2014 Chef Software, Inc.
 # License:: Apache License, Version 2.0
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -15,20 +15,13 @@
 # limitations under the License.
 #
 
-name "libyaml"
-default_version '0.1.6'
+name "scandir"
+default_version "1.2"
 
-source :url => "http://dd-agent-omnibus.s3.amazonaws.com/yaml-#{version}.tar.gz",
-       :md5 => '5fe00cda18ca5daeb43762b80c38e06e'
-
-relative_path "yaml-#{version}"
-
-env = with_embedded_path()
-env = with_standard_compiler_flags(env)
+dependency "python"
+dependency "pip"
 
 build do
-  ship_license "https://raw.githubusercontent.com/yaml/libyaml/master/LICENSE"
-  command "./configure --prefix=#{install_dir}/embedded", :env => env
-  command "make -j #{workers}", :env => env
-  command "make -j #{workers} install", :env => env
+  ship_license "https://raw.githubusercontent.com/benhoyt/scandir/v1.2/LICENSE.txt"
+  command "#{install_dir}/embedded/bin/pip install -I --install-option=\"--install-scripts=#{install_dir}/bin\" #{name}==#{version}"
 end
