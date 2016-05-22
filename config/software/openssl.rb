@@ -23,9 +23,9 @@ dependency "libgcc"
 dependency "makedepend"
 
 
-default_version "1.0.1s"
-source url: "http://www.openssl.org/source/#{name}-#{version}.tar.gz",
-       sha256: "e7e81d82f3cd538ab0cdba494006d44aab9dd96b7f6233ce9971fb7c7916d511"
+default_version "1.0.1t"
+source url: "ftp://ftp.openssl.org/source/#{name}-#{version}.tar.gz", # FIXME: use https as soon as we upgrade to debian 7
+       sha256: "4a6ee491a2fdb22e519c76fdc2a628bb3cec12762cd456861d207996c8a07088"
 
 relative_path "openssl-#{version}"
 
