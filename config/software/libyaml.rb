@@ -16,18 +16,19 @@
 #
 
 name "libyaml"
-default_version '0.1.6'
+default_version '8a2d1e93b2a2'
 
-source :url => "http://dd-agent-omnibus.s3.amazonaws.com/yaml-#{version}.tar.gz",
-       :md5 => '5fe00cda18ca5daeb43762b80c38e06e'
+source :url => "https://bitbucket.org/xi/libyaml/get/#{version}.tar.gz",
+       :md5 => '601fbd125721460eee302d7d8b058434'
 
-relative_path "yaml-#{version}"
+relative_path "xi-libyaml-#{version}"
 
 env = with_embedded_path()
 env = with_standard_compiler_flags(env)
 
 build do
   ship_license "https://raw.githubusercontent.com/yaml/libyaml/master/LICENSE"
+  command "./bootstrap"
   command "./configure --prefix=#{install_dir}/embedded", :env => env
   command "make -j #{workers}", :env => env
   command "make -j #{workers} install", :env => env

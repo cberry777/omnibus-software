@@ -23,14 +23,14 @@ dependency "libgcc"
 dependency "makedepend"
 
 
-default_version "1.0.1t"
-source url: "ftp://ftp.openssl.org/source/#{name}-#{version}.tar.gz", # FIXME: use https as soon as we upgrade to debian 7
-       sha256: "4a6ee491a2fdb22e519c76fdc2a628bb3cec12762cd456861d207996c8a07088"
+default_version "1.0.2i"
+source url: "https://www.openssl.org/source/#{name}-#{version}.tar.gz",
+       sha256: "9287487d11c9545b6efb287cdb70535d4e9b284dd10d51441d9b9963d000de6f"
 
 relative_path "openssl-#{version}"
 
 build do
-  patch :source => "openssl-1.0.1f-do-not-build-docs.patch"
+  patch :source => "openssl-1.0.2i-do-not-build-docs.patch"
 
   env = case ohai['platform']
         when "mac_os_x"
